@@ -14,7 +14,7 @@
     "prepublishOnly": "pnpm build",
     "build": "rm -rf ./dist && tsc",
     "api-docs": "typedoc index.ts",
-    "format": "prettier",
+    "format": "prettier --write index.ts index.test.ts",
     "test": "vitest"
   },
   "prettier": {
