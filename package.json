@@ -1,0 +1,40 @@
+{
+  "name": "@tabcat/ith-element",
+  "version": "1.0.0",
+  "description": "access javascript array indexes safely and easily",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "./dist/index.js",
+    "./dist/index.d.ts",
+    "./dist/index.d.ts.map"
+  ],
+  "scripts": {
+    "prepublishOnly": "pnpm build",
+    "build": "rm -rf ./dist && tsc",
+    "api-docs": "typedoc index.ts",
+    "format": "prettier",
+    "test": "vitest"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ]
+  },
+  "keywords": [
+    "noUncheckedIndexedAccess"
+  ],
+  "author": "tabcat",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.2",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "typedoc": "^0.26.3",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "code-err": "^3.1.0"
+  }
+}
