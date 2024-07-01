@@ -1,7 +1,7 @@
 import { CodeError } from "code-err";
 import { describe, expect, it } from "vitest";
 import {
-  ARRAY_ELEMENT_NOT_DEFINED,
+  ARRAY_INDEX_NOT_DEFINED,
   firstElement,
   ithElement,
   lastElement,
@@ -21,7 +21,7 @@ describe("ithElement", () => {
   it("throws if the index to be accessed is not defined", () => {
     expect(() => ithElement(array, 3))
       .to.throw()
-      .and.satisfy((e: CodeError) => e.code === ARRAY_ELEMENT_NOT_DEFINED);
+      .and.satisfy((e: CodeError) => e.code === ARRAY_INDEX_NOT_DEFINED);
   });
 });
 
@@ -33,7 +33,7 @@ describe("firstElement", () => {
   it("throws if the array is empty", () => {
     expect(() => firstElement([]))
       .to.throw()
-      .and.satisfy((e: CodeError) => e.code === ARRAY_ELEMENT_NOT_DEFINED);
+      .and.satisfy((e: CodeError) => e.code === ARRAY_INDEX_NOT_DEFINED);
   });
 });
 
@@ -45,6 +45,6 @@ describe("lastElement", () => {
   it("throws if the array is empty", () => {
     expect(() => lastElement([]))
       .to.throw()
-      .and.satisfy((e: CodeError) => e.code === ARRAY_ELEMENT_NOT_DEFINED);
+      .and.satisfy((e: CodeError) => e.code === ARRAY_INDEX_NOT_DEFINED);
   });
 });
