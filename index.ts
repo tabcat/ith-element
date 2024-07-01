@@ -13,14 +13,15 @@ export const ARRAY_INDEX_NOT_DEFINED = "ARRAY_INDEX_NOT_DEFINED";
  * @returns
  */
 export const ithElement = <T>(array: T[], i: number): T => {
-  if (i in array === false) { // `in` operator used to support arrays elements which are null or undefined
-    throw new CodeError(
-      `Unable to access element at index ${i}. No element is defined at that index.`,
-      { code: ARRAY_INDEX_NOT_DEFINED },
-    );
+  // `in` operator used to support arrays elements which are null or undefined
+  if (i in array) {
+    return array[i]!; // if `i` in `array` with type T[] then `array[i]` has type T
   }
 
-  return array[i]!; // the index has been checked as defined
+  throw new CodeError(
+    `Unable to access element at index ${i}. No element is defined at that index.`,
+    { code: ARRAY_INDEX_NOT_DEFINED },
+  );
 };
 
 /**
