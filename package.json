@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "access javascript array indexes safely and easily",
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "./dist/index.js",
     "./dist/index.d.ts",
