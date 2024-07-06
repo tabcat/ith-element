@@ -11,15 +11,15 @@ const array: (number | undefined)[] = [1, undefined, 3];
 
 describe("ithElement", () => {
   it("accesses the ith element of the array", () => {
-    expect(ithElement(array, 0)).to.equal(1);
+    expect(ithElement(array)(0)).to.equal(1);
   });
 
   it("supports accessing undefined elements", () => {
-    expect(ithElement(array, 1)).to.equal(undefined);
+    expect(ithElement(array)(1)).to.equal(undefined);
   });
 
   it("throws if the index to be accessed is not defined", () => {
-    expect(() => ithElement(array, 3))
+    expect(() => ithElement(array)(3))
       .to.throw()
       .and.satisfy((e: CodeError) => e.code === ARRAY_INDEX_NOT_DEFINED);
   });

@@ -12,7 +12,7 @@ export const ARRAY_INDEX_NOT_DEFINED = "ARRAY_INDEX_NOT_DEFINED";
  * @param i
  * @returns
  */
-export const ithElement = <T>(array: T[], i: number): T => {
+export const ithElement = <T>(array: T[]) => (i: number): T => {
   // `in` operator used to support arrays elements which are null or undefined
   if (i in array) {
     return array[i]!; // if `i` in `array` with type T[] then `array[i]` has type T
@@ -30,7 +30,7 @@ export const ithElement = <T>(array: T[], i: number): T => {
  * @param array
  * @returns
  */
-export const firstElement = <T>(array: T[]): T => ithElement(array, 0);
+export const firstElement = <T>(array: T[]): T => ithElement(array)(0);
 
 /**
  * Returns the last element of the `array`.
@@ -39,4 +39,4 @@ export const firstElement = <T>(array: T[]): T => ithElement(array, 0);
  * @returns
  */
 export const lastElement = <T>(array: T[]): T =>
-  ithElement(array, Math.max(0, array.length - 1));
+  ithElement(array)(Math.max(0, array.length - 1));
