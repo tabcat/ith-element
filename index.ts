@@ -1,9 +1,11 @@
-import { CodeError } from "code-err";
+export class IndexNotDefinedError extends Error {
+  public override name: 'IndexNotDefinedError'
 
-/**
- * Error code thrown by ithElement if the index being accessed is not defined.
- */
-export const ARRAY_INDEX_NOT_DEFINED = "ARRAY_INDEX_NOT_DEFINED";
+  constructor (...args: any) {
+    super(...args)
+    this.name = 'IndexNotDefinedError'
+  }
+}
 
 /**
  * Returns the element at index `i` in the `array`. Throws if the index is not defined.
@@ -18,9 +20,8 @@ export const ithElement = <T>(array: T[]) => (i: number): T => {
     return array[i]!; // if `i` in `array` with type T[] then `array[i]` has type T
   }
 
-  throw new CodeError(
+  throw new IndexNotDefinedError(
     `Unable to access element at index ${i}. No element is defined at that index.`,
-    { code: ARRAY_INDEX_NOT_DEFINED },
   );
 };
 
