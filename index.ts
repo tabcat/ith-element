@@ -1,9 +1,9 @@
 export class IndexNotDefinedError extends Error {
-  public override name: 'IndexNotDefinedError'
+  public override name: "IndexNotDefinedError";
 
-  constructor (...args: any) {
-    super(...args)
-    this.name = 'IndexNotDefinedError'
+  constructor(...args: any) {
+    super(...args);
+    this.name = "IndexNotDefinedError";
   }
 }
 
@@ -14,16 +14,18 @@ export class IndexNotDefinedError extends Error {
  * @param i
  * @returns
  */
-export const ithElement = <T>(array: T[]) => (i: number): T => {
-  // `in` operator used to support arrays elements which are null or undefined
-  if (i in array) {
-    return array[i]!; // if `i` in `array` with type T[] then `array[i]` has type T
-  }
+export const ithElement =
+  <T>(array: T[]) =>
+  (i: number): T => {
+    // `in` operator used to support arrays elements which are null or undefined
+    if (i in array) {
+      return array[i]!; // if `i` in `array` with type T[] then `array[i]` has type T
+    }
 
-  throw new IndexNotDefinedError(
-    `Unable to access element at index ${i}. No element is defined at that index.`,
-  );
-};
+    throw new IndexNotDefinedError(
+      `Unable to access element at index ${i}. No element is defined at that index.`,
+    );
+  };
 
 /**
  * Returns the first element of the `array`.

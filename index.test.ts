@@ -20,7 +20,9 @@ describe("ithElement", () => {
   it("throws if the index to be accessed is not defined", () => {
     expect(() => ithElement(array)(3))
       .to.throw()
-      .and.satisfy((e: IndexNotDefinedError) => e.name === 'IndexNotDefinedError');
+      .and.satisfy(
+        (e: IndexNotDefinedError) => e.name === "IndexNotDefinedError",
+      );
   });
 });
 
@@ -32,7 +34,9 @@ describe("firstElement", () => {
   it("throws if the array is empty", () => {
     expect(() => firstElement([]))
       .to.throw()
-      .and.satisfy((e: IndexNotDefinedError) => e.name === 'IndexNotDefinedError');
+      .and.satisfy(
+        (e: IndexNotDefinedError) => e.name === "IndexNotDefinedError",
+      );
   });
 });
 
@@ -44,12 +48,14 @@ describe("lastElement", () => {
   it("throws if the array is empty", () => {
     expect(() => lastElement([]))
       .to.throw()
-      .and.satisfy((e: IndexNotDefinedError) => e.name === 'IndexNotDefinedError');
+      .and.satisfy(
+        (e: IndexNotDefinedError) => e.name === "IndexNotDefinedError",
+      );
   });
 });
 
 describe("IndexNotDefinedError", () => {
   it("has a name property", () => {
-    expect(new IndexNotDefinedError().name).to.equal('IndexNotDefinedError')
-  })
-})
+    expect(new IndexNotDefinedError().name).to.equal("IndexNotDefinedError");
+  });
+});
