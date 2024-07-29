@@ -47,3 +47,9 @@ describe("lastElement", () => {
       .and.satisfy((e: IndexNotDefinedError) => e.name === 'IndexNotDefinedError');
   });
 });
+
+describe("IndexNotDefinedError", () => {
+  it("has a name property", () => {
+    expect(new IndexNotDefinedError().name).to.equal('IndexNotDefinedError')
+  })
+})
