@@ -3,13 +3,17 @@
   "version": "3.0.0",
   "description": "access javascript array indexes safely and easily",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "./dist/index.js",
     "./dist/index.d.ts",
     "./dist/index.d.ts.map"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "prepublishOnly": "pnpm build",
     "build": "rm -rf ./dist && tsc",
