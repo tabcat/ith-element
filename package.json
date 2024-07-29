@@ -1,6 +1,6 @@
 {
   "name": "@tabcat/ith-element",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "access javascript array indexes safely and easily",
   "type": "module",
   "files": [
